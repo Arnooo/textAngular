@@ -460,18 +460,40 @@ angular.module('textAngularSetup', [])
 			});
 			finishEdit();
 		});
+		var rotateLeft = angular.element('<button type="button" class="btn btn-default btn-sm btn-small" unselectable="on" tabindex="-1"><i class="fa fa-undo"></i></button>');
+		rotateLeft.on('click', function(event){
+			event.preventDefault();
+			console.log($element);
+			console.log($element.attr('width'));
+			console.log($element.attr('height'));
+			$element.css({
+				transform: $element.css('transform')+'rotate(-90deg)'
+			});
+			finishEdit();
+		});
+		var rotateRight = angular.element('<button type="button" class="btn btn-default btn-sm btn-small" unselectable="on" tabindex="-1"><i class="fa fa-repeat"></i></button>');
+		rotateRight.on('click', function(event){
+			event.preventDefault();
+			$element.css({
+				transform: $element.css('transform')+'rotate(90deg)'
+			});
+			finishEdit();
+		});
 		var resetButton = angular.element('<button type="button" class="btn btn-default btn-sm btn-small" unselectable="on" tabindex="-1">Reset</button>');
 		resetButton.on('click', function(event){
 			event.preventDefault();
 			$element.css({
 				width: '',
-				height: ''
+				height: '',
+				transform: ''
 			});
 			finishEdit();
 		});
 		buttonGroup.append(fullButton);
 		buttonGroup.append(halfButton);
 		buttonGroup.append(quartButton);
+		buttonGroup.append(rotateLeft);
+		buttonGroup.append(rotateRight);
 		buttonGroup.append(resetButton);
 		container.append(buttonGroup);
 		
