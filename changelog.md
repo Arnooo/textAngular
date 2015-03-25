@@ -1,3 +1,233 @@
+<a name="1.3.11"></a>
+### 1.3.11 (2015-03-16)
+
+
+<a name="1.3.10"></a>
+### 1.3.10 (2015-03-16)
+
+
+#### Bug Fixes
+
+* **placeholder:** multiple textAngular will cause CSSRule index error ([943f08d5](http://github.com/fraywing/textAngular/commit/943f08d5b1ccc1c358071e67f5968267a0664299))
+
+
+<a name="1.3.9"></a>
+### 1.3.9 (2015-03-13)
+
+
+#### Bug Fixes
+
+* **taBind.$formatters:** Fix an issue where unwrapped tags broke the textarea display ([d39c7b63](http://github.com/fraywing/textAngular/commit/d39c7b63732b345b826068de4f9655d082d74262), closes [#566](http://github.com/fraywing/textAngular/issues/566))
+
+
+<a name="1.3.8"></a>
+### 1.3.8 (2015-03-13)
+
+
+#### Bug Fixes
+
+* **taBind:** Fix tab focus issue. ([8693e1d6](http://github.com/fraywing/textAngular/commit/8693e1d69daf44bb4ca6a94863bd2e43b598f571), closes [#483](http://github.com/fraywing/textAngular/issues/483), [#379](http://github.com/fraywing/textAngular/issues/379))
+* **textAngular.popover:** Add scroll top offset. ([f12eb86d](http://github.com/fraywing/textAngular/commit/f12eb86d7dd473244f09982dc1b13b0e0949ca5c))
+
+
+<a name="1.3.7"></a>
+### 1.3.7 (2015-02-13)
+
+
+#### Bug Fixes
+
+* **taSanitize:** Close XSS vector, See http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0167, http://xforce.iss.net/xforce/xfdb/100929 and https://exchange.xforce.ibmcloud.com/#/vulnerabilities/100929 for details. ([f5f27c26](http://github.com/fraywing/textAngular/commit/f5f27c26bc99dc6f8bb226d7beb99ce8bcada01a))
+
+
+<a name="1.3.6"></a>
+### 1.3.6 (2015-02-06)
+
+
+#### Bug Fixes
+
+* **taSelection:** Fix selecting end of element being after trailing <br> ([e1008dfc](http://github.com/fraywing/textAngular/commit/e1008dfc02592b8484ff618bafbcd7f30084b8e4))
+
+
+#### Features
+
+* **taBind:** Allow updates while focussed. ([452c7f01](http://github.com/fraywing/textAngular/commit/452c7f010aea73a69d09672623b5deb6b8a32bf4), closes [#38](http://github.com/fraywing/textAngular/issues/38))
+
+
+<a name="1.3.5"></a>
+### 1.3.5 (2015-02-05)
+
+
+#### Bug Fixes
+
+* **globals:** Fix document.head undefined in IE<9 ([da435392](http://github.com/fraywing/textAngular/commit/da435392a099d2ce7aaf63458556fe64831426f6), closes [#530](http://github.com/fraywing/textAngular/issues/530))
+* **sanitize:** Port script/style fix over from main repo. ([7975a26d](http://github.com/fraywing/textAngular/commit/7975a26d81b24c45c27af147ea86df6e12d2022d), closes [#533](http://github.com/fraywing/textAngular/issues/533))
+* **taBind.paste:** Fix some paste isuses. ([f989f6c2](http://github.com/fraywing/textAngular/commit/f989f6c2fd4251d94f80387d00098fe4f31970f0))
+* **taSelection:** Fix a bug in insert HTML. ([7003b27b](http://github.com/fraywing/textAngular/commit/7003b27bb110a5c7f0909e77f5c033fe35766fb0))
+
+
+#### Features
+
+* **ta-hidden-input:** Add new class for hidden inputs ([07eda5a8](http://github.com/fraywing/textAngular/commit/07eda5a8768c7171efc905d7b95f7fd5375d3c99))
+* **ta-paste:** Add attribute that allows intercetping of the pasted content. ([39698985](http://github.com/fraywing/textAngular/commit/39698985dbc6a7a83be7328b3f89b42b0d948d39))
+* **taDOM:** New services or dealing with html nodes ([a08bdc53](http://github.com/fraywing/textAngular/commit/a08bdc538b50f3cbc283877a90b380c6e77dacf1))
+
+
+<a name="1.3.4"></a>
+### 1.3.4 (2015-02-02)
+
+
+#### Bug Fixes
+
+* **dependancies:** Changed Bootstrap to Bootstrap-css-only ([9250bf5a](http://github.com/fraywing/textAngular/commit/9250bf5a32ea5a76be0c7fb605bb499df775b1b4), closes [#527](http://github.com/fraywing/textAngular/issues/527))
+* **npm:** Fix installation issues with npm ([902fa692](http://github.com/fraywing/textAngular/commit/902fa692eed54211099af3e4e4a70eb060d46fe1), closes [#522](http://github.com/fraywing/textAngular/issues/522))
+
+
+<a name="1.3.3"></a>
+### 1.3.3 (2015-01-28)
+
+
+#### Bug Fixes
+
+* **taBind._blankTest:** Fix for highly nested content. ([4bbfbaba](http://github.com/fraywing/textAngular/commit/4bbfbabae7f85c810f1a614bb515a1454d3fb29c), closes [#512](http://github.com/fraywing/textAngular/issues/512))
+* **textAngularSetup:**
+  * Add tooltips for buttons on edit link popover ([0f980d3f](http://github.com/fraywing/textAngular/commit/0f980d3fc72959e42a3ba81e068fad5911454014))
+  * Add translation for "Open in New Window" button on edit link popover ([d61ff1da](http://github.com/fraywing/textAngular/commit/d61ff1da442be64b647ba4341bc8099aea0e3967))
+
+
+<a name="1.3.2"></a>
+### 1.3.2 (2015-01-27)
+
+
+#### Bug Fixes
+
+* **dependancies:** Revert back to stable rangy version ([498176d2](http://github.com/fraywing/textAngular/commit/498176d21ee056ac5fd0348b9a6c8309ab27312e))
+* **taSanitize:** Fix issue with last pre-tag overwriting all previous. ([230e779e](http://github.com/fraywing/textAngular/commit/230e779e9b9ae6f2de59a3e53e1def55420b8dd2), closes [#508](http://github.com/fraywing/textAngular/issues/508))
+
+
+<a name="1.3.1"></a>
+### 1.3.1 (2015-01-23)
+
+
+#### Bug Fixes
+
+* **Bower:** Rangy-official renamed to rangy. ([652204c9](http://github.com/fraywing/textAngular/commit/652204c9e2b271eee51159c27f90d1a429c0acb1))
+
+
+<a name="1.3.1"></a>
+## 1.3.1 (2015-01-23)
+
+
+#### Bug Fixes
+
+* **Bower:** Rangy-official renamed to rangy. ([652204c9](http://github.com/fraywing/textAngular/commit/652204c9e2b271eee51159c27f90d1a429c0acb1))
+
+
+<a name="1.3.0"></a>
+## 1.3.0 (2015-01-22)
+
+
+#### Features
+
+* **taBind:**
+  * Textarea basic formatting of html with tabs and newlines ([f0d3baf8](http://github.com/fraywing/textAngular/commit/f0d3baf8dd99e11f746e6aa17ccf1e94c2842a87), closes [#307](http://github.com/fraywing/textAngular/issues/307))
+  * Allow the events to be overriden in external directives ([c4b7bdda](http://github.com/fraywing/textAngular/commit/c4b7bdda609deb49d4c51cacd835c4082843c14b), closes [#493](http://github.com/fraywing/textAngular/issues/493))
+
+
+<a name="1.3.0-23"></a>
+### 1.3.0-23 (2015-01-20)
+
+
+#### Bug Fixes
+
+* **taBind:** Issue when unwrapped text was entered ([51f37284](http://github.com/fraywing/textAngular/commit/51f37284156bd2fca17a2c9aa7e42176393bf115), closes [#484](http://github.com/fraywing/textAngular/issues/484))
+
+
+<a name="1.3.0-22"></a>
+### 1.3.0-22 (2015-01-13)
+
+
+#### Bug Fixes
+
+* **main.events:** ng-focus wasn't being triggered on focus. ([3928bc50](http://github.com/fraywing/textAngular/commit/3928bc50205fb53de8c7cc08e213fc4f0b6aca24), closes [#482](http://github.com/fraywing/textAngular/issues/482))
+* **taBind._blankTest:** Fix a bug where the first tag had really big attributes and cut off the actual c ([fe800b24](http://github.com/fraywing/textAngular/commit/fe800b24cbcfad53f2e9a0b793b1ead9b7b4d45e), closes [#484](http://github.com/fraywing/textAngular/issues/484))
+
+
+<a name="1.3.0-21"></a>
+### 1.3.0-21 (2015-01-06)
+
+
+#### Bug Fixes
+
+* **taBind:** Add blankTest tests and seperate service ([c3900a4a](http://github.com/fraywing/textAngular/commit/c3900a4a64c9b51632bc70c0e305d2752faa0ba3))
+* **textAngular.resize:** Fixes resize overlay with more than one image ([c08ddd75](http://github.com/fraywing/textAngular/commit/c08ddd75282cea89e5c2bfed64bee7fc2f78b1a5), closes [#470](http://github.com/fraywing/textAngular/issues/470))
+
+
+<a name="1.3.0-20"></a>
+### 1.3.0-20 (2015-01-05)
+
+
+#### Bug Fixes
+
+* **textAngular.resize-overlay:** Catch when height or width is NaN ([efcb4115](http://github.com/fraywing/textAngular/commit/efcb411523aecab53a1798a7c25057f34f461444), closes [#470](http://github.com/fraywing/textAngular/issues/470))
+* **textangular:** Fix focus issues in IE11 ([a5200e38](http://github.com/fraywing/textAngular/commit/a5200e38780744ad71aa30f83871917a22fd8471), closes [#443](http://github.com/fraywing/textAngular/issues/443))
+
+
+<a name="1.3.0-19"></a>
+### 1.3.0-19 (2014-12-18)
+
+
+#### Bug Fixes
+
+* **taBind:** Catch edge case on mouseup handler when no children ([e1140893](http://github.com/fraywing/textAngular/commit/e11408932653cb1e8adfae628fa34c495c7892bf), closes [#446](http://github.com/fraywing/textAngular/issues/446))
+* **textAngular:** Add stop of update selected styles on blur. ([c877991d](http://github.com/fraywing/textAngular/commit/c877991de312b7e78865d4f03390de5a2e4d40c2), closes [#443](http://github.com/fraywing/textAngular/issues/443))
+
+
+<a name="1.3.0-18"></a>
+### 1.3.0-18 (2014-12-17)
+
+
+#### Bug Fixes
+
+* **textAngular:** Fixes the window blur check for updating styles ([72a5da81](http://github.com/fraywing/textAngular/commit/72a5da815ba8cad96ec70ab920dcf14971bdb05d))
+
+
+<a name="1.3.0-17"></a>
+### 1.3.0-17 (2014-12-16)
+
+
+<a name="1.3.0-16"></a>
+### 1.3.0-16 (2014-12-16)
+
+
+#### Bug Fixes
+
+* **taBind:**
+  * Ensure onSelectHandlers are allways applied with DOM changes ([01873453](http://github.com/fraywing/textAngular/commit/0187345359cb833a43f76bd6385e67f79193c84c), closes [#446](http://github.com/fraywing/textAngular/issues/446))
+  * Fix cursor selection on focus ([05f15a5e](http://github.com/fraywing/textAngular/commit/05f15a5e4adcd4d21cd3b9085bcd031e5d0e0c65), closes [#444](http://github.com/fraywing/textAngular/issues/444))
+  * _blankTest should be more performant now and stop crashing chrome ([57ff7ba1](http://github.com/fraywing/textAngular/commit/57ff7ba1d6154ef9202fe13aacc4a3efe1da2d87), closes [#451](http://github.com/fraywing/textAngular/issues/451))
+* **taBind.paste:** Fix multi-paste issue ([58f75379](http://github.com/fraywing/textAngular/commit/58f7537926368a1da96c614f0c02790029e1f284), closes [#392](http://github.com/fraywing/textAngular/issues/392))
+* **taSanitize:**
+  * Fix inconsistencies between browsers of bold, italics and underline ([dd479a16](http://github.com/fraywing/textAngular/commit/dd479a166a054fcd4f2defada0b72a0fc84777ea))
+  * fix also container (#424) ([a49600de](http://github.com/fraywing/textAngular/commit/a49600de089281b5562cdad8d7ccefa7e905baf5))
+  * add test (#424) ([2b94c7c1](http://github.com/fraywing/textAngular/commit/2b94c7c1dca4dde0aa3f9bfe534649f2a5070235))
+  * copy code to lib/factories.js (#424) ([e61f69c0](http://github.com/fraywing/textAngular/commit/e61f69c075ec56a7499df9894b881f4ef634ed10))
+  * merge taPreSatitize to taSanitize (#424) ([e3c9cf6e](http://github.com/fraywing/textAngular/commit/e3c9cf6e665b6e92fe5fc5d62ded35407e15743c))
+  * fix for #424 ([91b16c89](http://github.com/fraywing/textAngular/commit/91b16c89fa2176d2bc27ec804f4d08fb5d471ccd))
+* **textAngular:** Prevent updateSelectedStyles loop when out of document focus ([81a37de7](http://github.com/fraywing/textAngular/commit/81a37de7a48b1d17933843c07559398c0c430ad5))
+
+
+<a name="1.3.0-pre15"></a>
+### 1.3.0-pre15 (2014-12-05)
+
+
+#### Bug Fixes
+
+* **DOM:** Fix for convert to lists ([75cc1441](http://github.com/fraywing/textAngular/commit/75cc14418a7c8cde971b37847d2025a3f4c6abee), closes [#377](http://github.com/fraywing/textAngular/issues/377))
+* **placeholder:** add missing return ([799a4ff0](http://github.com/fraywing/textAngular/commit/799a4ff0112c35cb68822eca10ff1a9f4250ab11))
+* **taBind:** Fix paste issues ([f9d7e423](http://github.com/fraywing/textAngular/commit/f9d7e42336483da7376095fc1f741d6d0322a4df), closes [#407](http://github.com/fraywing/textAngular/issues/407))
+* **taExecCommand:** Fix List conversion bug. ([d97842c6](http://github.com/fraywing/textAngular/commit/d97842c6696544e6971fcfda64ad91de908e79be), closes [#399](http://github.com/fraywing/textAngular/issues/399))
+
+
 <a name="1.3.0-pre14"></a>
 ### 1.3.0-pre14 (2014-11-11)
 

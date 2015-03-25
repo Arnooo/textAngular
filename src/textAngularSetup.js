@@ -2,12 +2,12 @@
 @license textAngular
 Author : Austin Anderson
 License : 2013 MIT
-Version 1.3.0-pre14
+Version 1.3.7
 
 See README.md or https://github.com/fraywing/textAngular/wiki for requirements and use.
 */
 angular.module('textAngularSetup', [])
-	
+
 // Here we set up the global display defaults, to set your own use a angular $provider#decorator.
 .value('taOptions',  {
 	toolbar: [
@@ -104,7 +104,7 @@ angular.module('textAngularSetup', [])
 		tooltip: 'Ordered List'
 	},
 	quote: {
-		tooltip: 'Quote/unqoute selection or paragraph'
+		tooltip: 'Quote/unquote selection or paragraph'
 	},
 	undo: {
 		tooltip: 'Undo'
@@ -154,6 +154,17 @@ angular.module('textAngularSetup', [])
 	insertLink: {
 		tooltip: 'Insert / edit link',
 		dialogPrompt: "Please enter a URL to insert"
+	},
+	editLink: {
+		reLinkButton: {
+			tooltip: "Relink"
+		},
+		unLinkButton: {
+			tooltip: "Unlink"
+		},
+		targetToggle: {
+			buttontext: "Open in New Window"
+		}
 	},
 	wordcount: {
 		tooltip: 'Display words Count'
@@ -310,7 +321,7 @@ angular.module('textAngularSetup', [])
 			return this.$editor().wrapSelection("indent", null);
 		},
 		activeState: function(){
-			return this.$editor().queryFormatBlockState('blockquote'); 
+			return this.$editor().queryFormatBlockState('blockquote');
 		}
 	});
 	taRegisterTool('outdent', {
@@ -390,7 +401,7 @@ angular.module('textAngularSetup', [])
 				if(_preLis.length === 0 || _postLis.length === 0){
 					if(_postLis.length === 0) _parent.after(newElem);
 					else _parent[0].parentNode.insertBefore(newElem[0], _parent[0]);
-					
+
 					if(_preLis.length === 0 && _postLis.length === 0) _parent.remove();
 					else angular.element(possibleNodes[0]).remove();
 				}else{
@@ -420,7 +431,7 @@ angular.module('textAngularSetup', [])
 			restoreSelection();
 		}
 	});
-	
+
 	var imgOnSelectAction = function(event, $element, editorScope){
 		// setup the editor toolbar
 		// Credit to the work at http://hackerwins.github.io/summernote/ for this editbar logic/display
@@ -496,7 +507,7 @@ angular.module('textAngularSetup', [])
 		buttonGroup.append(rotateRight);
 		buttonGroup.append(resetButton);
 		container.append(buttonGroup);
-		
+
 		buttonGroup = angular.element('<div class="btn-group" style="padding-right: 6px;">');
 		var floatLeft = angular.element('<button type="button" class="btn btn-default btn-sm btn-small" unselectable="on" tabindex="-1"><i class="fa fa-align-left"></i></button>');
 		floatLeft.on('click', function(event){
@@ -535,7 +546,7 @@ angular.module('textAngularSetup', [])
 		buttonGroup.append(floatNone);
 		buttonGroup.append(floatRight);
 		container.append(buttonGroup);
-		
+
 		buttonGroup = angular.element('<div class="btn-group">');
 		var remove = angular.element('<button type="button" class="btn btn-default btn-sm btn-small" unselectable="on" tabindex="-1"><i class="fa fa-trash-o"></i></button>');
 		remove.on('click', function(event){
@@ -545,11 +556,11 @@ angular.module('textAngularSetup', [])
 		});
 		buttonGroup.append(remove);
 		container.append(buttonGroup);
-		
+
 		editorScope.showPopover($element);
 		editorScope.showResizeOverlay($element);
 	};
-	
+
 	taRegisterTool('insertImage', {
 		iconclass: 'fa fa-picture-o',
 		tooltiptext: taTranslations.insertImage.tooltip,
@@ -575,7 +586,7 @@ angular.module('textAngularSetup', [])
 				// get the video ID
 				var ids = urlPrompt.match(/(\?|&)v=[^&]*/);
 				/* istanbul ignore else: if it's invalid don't worry - though probably should show some kind of error message */
-				if(ids.length > 0){
+				if(ids && ids.length > 0){
 					// create the embed link
 					var urlLink = "https://www.youtube.com/embed/" + ids[0].substring(3);
 					// create the HTML
@@ -592,7 +603,7 @@ angular.module('textAngularSetup', [])
 			onlyWithAttrs: ['ta-insert-video'],
 			action: imgOnSelectAction
 		}
-	});	
+	});
 	taRegisterTool('insertLink', {
 		tooltiptext: taTranslations.insertLink.tooltip,
 		iconclass: 'fa fa-link',
@@ -613,7 +624,7 @@ angular.module('textAngularSetup', [])
 				// setup the editor toolbar
 				// Credit to the work at http://hackerwins.github.io/summernote/ for this editbar logic
 				event.preventDefault();
-				editorScope.displayElements.popover.css('width', '435px');
+				editorScope.displayElements.popover.css('width', '436px');
 				var container = editorScope.displayElements.popoverContainer;
 				container.empty();
 				container.css('line-height', '28px');
@@ -628,7 +639,7 @@ angular.module('textAngularSetup', [])
 				});
 				container.append(link);
 				var buttonGroup = angular.element('<div class="btn-group pull-right">');
-				var reLinkButton = angular.element('<button type="button" class="btn btn-default btn-sm btn-small" tabindex="-1" unselectable="on"><i class="fa fa-edit icon-edit"></i></button>');
+				var reLinkButton = angular.element('<button type="button" class="btn btn-default btn-sm btn-small" tabindex="-1" unselectable="on" title="' + taTranslations.editLink.reLinkButton.tooltip + '"><i class="fa fa-edit icon-edit"></i></button>');
 				reLinkButton.on('click', function(event){
 					event.preventDefault();
 					var urlLink = $window.prompt(taTranslations.insertLink.dialogPrompt, $element.attr('href'));
@@ -639,7 +650,7 @@ angular.module('textAngularSetup', [])
 					editorScope.hidePopover();
 				});
 				buttonGroup.append(reLinkButton);
-				var unLinkButton = angular.element('<button type="button" class="btn btn-default btn-sm btn-small" tabindex="-1" unselectable="on"><i class="fa fa-unlink icon-unlink"></i></button>');
+				var unLinkButton = angular.element('<button type="button" class="btn btn-default btn-sm btn-small" tabindex="-1" unselectable="on" title="' + taTranslations.editLink.unLinkButton.tooltip + '"><i class="fa fa-unlink icon-unlink"></i></button>');
 				// directly before this click event is fired a digest is fired off whereby the reference to $element is orphaned off
 				unLinkButton.on('click', function(event){
 					event.preventDefault();
@@ -648,7 +659,7 @@ angular.module('textAngularSetup', [])
 					editorScope.hidePopover();
 				});
 				buttonGroup.append(unLinkButton);
-				var targetToggle = angular.element('<button type="button" class="btn btn-default btn-sm btn-small" tabindex="-1" unselectable="on">Open in New Window</button>');
+				var targetToggle = angular.element('<button type="button" class="btn btn-default btn-sm btn-small" tabindex="-1" unselectable="on">' + taTranslations.editLink.targetToggle.buttontext + '</button>');
 				if($element.attr('target') === '_blank'){
 					targetToggle.addClass('active');
 				}
@@ -665,18 +676,18 @@ angular.module('textAngularSetup', [])
 		}
 	});
 	taRegisterTool('wordcount', {
-		display: '<div id="toolbarWC" style="display:block; min-width:100px;">Words:{{wordcount}}</div>',
+		display: '<div id="toolbarWC" style="display:block; min-width:100px;">Words: <span ng-bind="wordcount"></span></div>',
 		disabled: true,
 		wordcount: 0,
 		activeState: function(){ // this fires on keyup
 			var textElement = this.$editor().displayElements.text;
 			var workingHTML = textElement[0].innerHTML;
 			var sourceText = workingHTML.replace(/(<[^>]*?>)/ig, ' '); // replace all html tags with spaces
-			
+
 			// Caculate number of words
 			var sourceTextMatches = sourceText.match(/\S+/g);
 			var noOfWords = sourceTextMatches && sourceTextMatches.length || 0;
-			
+
 			//Set current scope
 			this.wordcount = noOfWords;
 			//Set editor scope
@@ -685,13 +696,13 @@ angular.module('textAngularSetup', [])
 		}
 	});
 	taRegisterTool('charcount', {
-		display: '<div id="toolbarCC" style="display:block; min-width:120px;">Characters:{{charcount}}</div>',
+		display: '<div id="toolbarCC" style="display:block; min-width:120px;">Characters: <span ng-bind="charcount"></span></div>',
 		disabled: true,
 		charcount: 0,
 		activeState: function(){ // this fires on keyup
 			var textElement = this.$editor().displayElements.text;
 			var sourceText = textElement[0].innerText || textElement[0].textContent; // to cover the non-jquery use case.
-			
+
 			// Caculate number of chars
 			var noOfChars = sourceText.replace(/(\r\n|\n|\r)/gm,"").replace(/^\s+/g,' ').replace(/\s+$/g, ' ').length;
 			//Set current scope
